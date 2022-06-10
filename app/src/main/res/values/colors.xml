@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+<!--    project color -->
+
+    <color name="colorTeal">#00C2A3</color>
+    <color name="colorGreen">#4BA54F</color>
+    <color name="colorOrange">#FF6100</color>
+    <color name="colorBackground">#1A1A1A</color>
+    <color name="colorElementColor">#2C2C2C</color>
+    <color name="colorSelected">#3B3B3B</color>
 </resources>
