@@ -87,6 +87,10 @@ class ColorWheelView @JvmOverloads constructor(
         return super.onTouchEvent(event)
     }
 
+    fun updateSelector(color: Int){
+        Log.d("Log", "updateSelector: The color is :  $color")
+    }
+
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         netWidth = w - paddingLeft - paddingRight
         netHeight = h - paddingTop - paddingBottom

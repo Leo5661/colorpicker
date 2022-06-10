@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity(), ColorObserver, View.OnClickListener {
 
     override fun onColor(color: Int, fromUser: Boolean, shouldPropagate: Boolean) {
         binding.pickedColor.setBackgroundColor(color)
+        binding.colorPicker.setSelectorColor(color)
     }
 
     override fun onClick(v: View) {

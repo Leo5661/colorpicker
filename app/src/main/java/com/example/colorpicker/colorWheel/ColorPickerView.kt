@@ -31,7 +31,7 @@ class ColorPickerView @JvmOverloads constructor(
         colorWheelView = ColorWheelView(context)
         observableOnDuty = colorWheelView
         val density = resources.displayMetrics.density
-        val margin = (16 * density).toInt()
+        val margin = (8 * density).toInt()
 
         val params = LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         addView(colorWheelView, params)
@@ -62,10 +62,9 @@ class ColorPickerView @JvmOverloads constructor(
         colorWheelView.setColor(color, true)
     }
 
-    fun reset() {
-        colorWheelView.setColor(initialColor, true)
+    fun setSelectorColor(color: Int){
+        colorWheelView.updateSelector(color)
     }
-
 
     override fun subscribe(observer: ColorObserver) {
         observableOnDuty.subscribe(observer)
