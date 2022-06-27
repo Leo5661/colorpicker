@@ -8,70 +8,42 @@
         android:background="@color/colorBackground"
         android:paddingBottom="4dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ImageView
             android:id="@+id/firstCard"
-            app:layout_constraintDimensionRatio="1:1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintDimensionRatio="1:1"
+            android:contentDescription="@string/txt_first_control_button"
             android:padding="16dp"
-            android:background="@color/controller_background"
+            android:background="@drawable/controller_background"
+            android:src="@drawable/circular_teal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintTop_toTopOf="parent"/>
 
-            <ImageView
-                android:id="@+id/tealIv"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:background="@drawable/circular_teal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ImageView
             android:id="@+id/secondCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:background="@color/controller_background"
-            app:layout_constraintStart_toEndOf="@id/firstCard"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <ImageView
-                android:id="@+id/greenIv"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:background="@drawable/circular_green"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/thirdCard"
             app:layout_constraintDimensionRatio="1:1"
+            android:padding="16dp"
+            android:contentDescription="@string/txt_second_control_button"
+            android:background="@drawable/controller_background"
+            android:src="@drawable/circular_green"
+            app:layout_constraintStart_toEndOf="@id/firstCard"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/thirdCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintDimensionRatio="1:1"
             android:padding="16dp"
-            android:background="@color/controller_background"
+            android:contentDescription="@string/txt_third_control_button"
+            android:background="@drawable/controller_background"
+            android:src="@drawable/circular_orange"
             app:layout_constraintStart_toEndOf="@id/secondCard"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintTop_toTopOf="parent"/>
 
-            <ImageView
-                android:id="@+id/orangeIv"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:layout_constraintDimensionRatio="1:1"
-                android:background="@drawable/circular_orange"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

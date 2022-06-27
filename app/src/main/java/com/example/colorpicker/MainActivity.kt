@@ -3,6 +3,8 @@ package com.example.colorpicker
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
+import androidx.databinding.DataBindingUtil
 import com.example.colorpicker.colorWheel.ColorObserver
 import com.example.colorpicker.databinding.ActivityMainBinding
 
@@ -13,10 +15,7 @@ class MainActivity : AppCompatActivity(), ColorObserver, View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
-
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.colorPicker.subscribe(this)
         val color: Long = INITIAL_COLOR
         binding.colorPicker.setInitialColor(color.toInt())
@@ -49,7 +48,7 @@ class MainActivity : AppCompatActivity(), ColorObserver, View.OnClickListener {
         binding.threeWaySelector.secondCard.isSelected = false
         binding.threeWaySelector.thirdCard.isSelected = false
         val color = R.color.colorTeal
-        binding.pickedColor.setBackgroundColor(resources.getColor(color))
+        binding.pickedColor.setBackgroundColor(ContextCompat.getColor(this,color))
     }
 
     private fun onSecondCardClick(){
@@ -57,7 +56,7 @@ class MainActivity : AppCompatActivity(), ColorObserver, View.OnClickListener {
         binding.threeWaySelector.secondCard.isSelected = true
         binding.threeWaySelector.thirdCard.isSelected = false
         val color = R.color.colorGreen
-        binding.pickedColor.setBackgroundColor(resources.getColor(color))
+        binding.pickedColor.setBackgroundColor(ContextCompat.getColor(this,color))
 
     }
 
@@ -66,6 +65,6 @@ class MainActivity : AppCompatActivity(), ColorObserver, View.OnClickListener {
         binding.threeWaySelector.secondCard.isSelected = false
         binding.threeWaySelector.thirdCard.isSelected = true
         val color = R.color.colorOrange
-        binding.pickedColor.setBackgroundColor(resources.getColor(color))
+        binding.pickedColor.setBackgroundColor(ContextCompat.getColor(this,color))
     }
 }

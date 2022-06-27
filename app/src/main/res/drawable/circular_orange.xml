@@ -3,4 +3,7 @@
     android:shape="oval">
     <solid
         android:color="@color/colorOrange"/>
+    <size
+        android:width="30dp"
+        android:height="30dp"/>
 </shape>
