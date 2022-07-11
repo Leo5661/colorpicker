@@ -108,7 +108,8 @@ class ColorWheelView @JvmOverloads constructor(
         val radian = (hsv[0] / 180f * Math.PI).toFloat()
         updateSelector(
             (r * cos(radian.toDouble()) + centerX).toFloat(),
-            (-r * sin(radian.toDouble()) + centerY).toFloat()
+            (-r * sin(radian.toDouble()) + centerY).toFloat(),
+            null
         )
         currentColor = color
         if (!onlyUpdateOnTouchEventUp) {
@@ -165,7 +166,7 @@ class ColorWheelView @JvmOverloads constructor(
         if (!onlyUpdateOnTouchEventUp || isTouchUpEvent) {
             emitter.onColor(getColorAtPoint(x, y), true, isTouchUpEvent)
         }
-        updateSelector(x, y)
+        updateSelector(x, y,getColorAtPoint(x, y))
     }
 
     private fun getColorAtPoint(eventX: Float, eventY: Float): Int {
@@ -178,7 +179,7 @@ class ColorWheelView @JvmOverloads constructor(
         return Color.HSVToColor(hsv)
     }
 
-    private fun updateSelector(eventX: Float, eventY: Float) {
+    private fun updateSelector(eventX: Float, eventY: Float, color: Int?) {
         var x = eventX - centerX
         var y = eventY - centerY
         val r = sqrt((x * x + y * y).toDouble())
@@ -188,7 +189,7 @@ class ColorWheelView @JvmOverloads constructor(
         }
         currentPoint.x = x + centerX
         currentPoint.y = y + centerY
-        selector.setCurrentPoint(currentPoint)
+        selector.setCurrentPoint(currentPoint,color)
     }
 
 }
